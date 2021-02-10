@@ -1,0 +1,83 @@
+@import './global';
+
+.mobile-header {
+    background-color: $color-main;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    position: relative;
+    height: 180px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: homeheader .6s forwards;
+    margin-bottom: 32px;
+}
+@keyframes homeheader {
+    0% {height: 84px; border-radius: 0px 0px 24px 24px;}
+    100% {height: 180px; border-radius: 0px 0px 0px 0px;}
+}
+
+.min-header {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    animation: mini .6s forwards;
+    
+}
+
+@keyframes mini {
+    0% {height: 180px; border-radius: 0px 0px 0px 0px;}
+    100% {height: 84px; border-radius: 0px 0px 24px 24px;}
+}
+
+.menu-icon {
+    width: 48px;
+    height: 48px;
+    padding: 12px;
+    
+    
+}
+
+.app-title { color: #fff; padding: 0 30px;}
+
+.min-header .app-title {margin-bottom: 8px;}
+.min-header .menu-icon {margin-bottom: 4px;}
+.min-header p {display:none}
+.mobile-header h5 {margin: 0px;}
+
+
+.mobile-header-search-bar {
+    min-width: 300px;
+    position: absolute;
+    bottom: -16px;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+
+    @media (min-width:768px) {
+        min-width: 500px;
+    }
+}
+
+.mobile-header-search-bar form {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 36px;
+}
+.mobile-header-search-bar form input {
+    position: absolute;
+    top: 0;
+}
+
+.search-icon-mhs {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: auto;
+    right: auto;
+    margin-right: 264px;
+    top: 7px;
+    opacity: .6;
+}

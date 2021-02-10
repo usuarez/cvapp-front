@@ -1,0 +1,374 @@
+.loginPage {
+    min-height: 120vh;
+    min-width: 100%;
+    background-color: $color-main;
+    margin: 0px;
+    padding: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+.bubbles {
+    position: absolute;
+    top: 0;
+    right: 0;
+    overflow: hidden !important;
+    width: 300px;
+    height: 200px;
+}
+.bubble{
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    top: 0;
+    right: 0;
+}
+.bubble.c-y{
+    background-color: $color-complementary;
+    top: -120px;
+    right: 40px;
+}
+.bubble.c-o{
+    background-color: $color-orange;
+    top: -60px;
+    right: -80px;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.loginPage h4, .loginPage h5 {
+    margin: 60px 0px 0px;
+    text-align: center;
+    color: white;
+    z-index: 100;
+    @media (min-width: 600px) {
+        margin-top: 30px;
+    }
+}
+
+.login-form, .signup-form {
+    max-height: 600px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.upload-container {
+    position: relative;
+}
+
+.FirstLoginImg {
+    width: 300px;
+    position: absolute;
+    top: 0;
+    left: auto;
+}
+
+.fileChoosen {
+    width: 300px;
+    height: 334px;
+    position: relative;
+}
+
+.previewPhoto {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    position: absolute;
+    top: 44px;
+    left: 105px;
+    overflow: hidden;
+}
+
+.previewPhoto img {
+    width: 104px;
+    height: auto;
+    max-width: auto;
+    min-height: 104px;
+}
+
+.cameraIcon {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 110px;
+    left: 170px;
+    padding: 12px;
+    border: 3px solid #fff;
+    background-color: $color-main;
+    border-radius: 50%;
+    animation: pulse .8s infinite;
+    z-index: 10;
+    
+}
+.inputFile {
+    width: 48px;
+    height: 48px;
+    position: absolute;
+    top: 110px;
+    left: 170px;
+    padding: 12px;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 100;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0px 0px 0px 0px rgba($color: $color-main, $alpha: 1);
+    }
+    80% {
+        box-shadow: 0px 0px 0px 10px rgba($color: $color-main, $alpha: 0.5);
+    }
+    100% {
+        box-shadow: 0px 0px 0px 24px rgba($color: $color-main, $alpha: 0.0);
+    }
+    
+}
+
+.fixbtn {
+    position: fixed;
+    bottom: 10vh;
+    z-index: 10000;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.field-container {
+    position: relative;
+    min-height: 32px;
+    width: 100%;
+    max-width: 280px;
+}
+.field-container input, .field-container label {
+    position: absolute;
+}
+.field-container input[type="text"],
+.field-container input[type="password"],
+.field-container input[type="tel"],
+.field-container input[type="date"] {
+    height: 32px;
+    border: none;
+    border-radius: 0px;
+    border-bottom: 1px solid rgba(53, 53, 53, .32);
+    text-indent: 16px;
+    box-shadow: 1px 1px 12px 3px rgba($color: $color-shade, $alpha: 0.5);
+    border-radius: 8px;
+    &:focus{outline:0px}
+}
+.field-container label {
+    z-index: 10;
+    line-height: 32px;
+    left: 16px;
+    color: rgb(124, 124, 124);
+    padding: 0px 2px;
+}
+.field-container label[for="name"].first-start,
+.field-container label[for="birth"] {
+    animation: up .4s forwards;
+}
+@keyframes up {
+    0% {
+        line-height: 32px;
+        left: 16px;
+    }
+    100% {
+        top: -12px;
+        font-weight: 400;
+        text-shadow: 0px 0px 15px rgba(53, 53, 53, 0.967);
+        line-height: 12px;
+        left: 16px;
+        font-size: 12px;
+        color: rgb(255, 255, 255);
+    }
+}
+@keyframes down {
+    0% {
+        top: -6px;
+        line-height: 12px;
+        left: 12px;
+        font-size: 12px;
+        color: rgb(53, 53, 53);
+    }
+    100% {
+        line-height: 32px;
+        left: 12px;
+    }
+    
+}
+
+
+.login-form{
+    animation: in .4s forwards
+}
+.signup-form{
+    animation: out .4s forwards
+}
+
+@keyframes out {
+    0%{
+        transform: scale(1);
+    }
+    40%{
+        transform: scale(0,1);
+    }
+    100%{
+        transform: scale(0);
+    }
+}
+@keyframes in {
+    0%{
+        transform: scale(0);
+    }
+    40%{
+        transform: scale(0,1);
+    }
+    100%{
+        transform: scale(1);
+    }
+    
+}
+
+
+
+.register{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.register button {
+    text-decoration: none;
+    color: white;
+    border: 1px solid #fff;
+    padding: 8px 24px;
+}
+.forms {
+    position: relative;
+    min-height: 320px;
+}
+.forms form {
+    position: absolute;
+}
+.field-container.checklist{ 
+    overflow: hidden;
+    position: relative;
+    background-color: #fff;
+    border-radius: 4px;
+}
+.check-item {
+    height: 32px;
+    padding: 6px 12px 5px;
+    font-size: $type-body2;
+    display: flex;
+    align-items: flex-end;
+    transition: .4s;
+    margin: 0;
+    animation: sliderrors 9s infinite;
+}
+
+    @keyframes sliderrors {
+        0% {
+            transform: translateY(-0px);
+        }
+        20% {transform: translateY(-0px);}
+        25% {
+            transform: translateY(-32px);
+        }
+        45% {transform: translateY(-32px);}
+        50% {
+            transform: translateY(-64px);
+        }
+        70% {transform: translateY(-64px);}
+        75% {
+            transform: translateY(-96px);
+        }
+        95% {transform: translateY(-96px);}
+        100% {
+            transform: translateY(-0px);
+        }
+    }
+.check-item img {
+    height: 16px;
+    padding-right: 8px;
+}
+.check-item.error img{
+    margin-bottom: 1px;
+    
+}
+
+
+.ok {
+    color: $color-green;
+}
+.error {
+    color: $color-orange;
+}
+.input-ok {
+    border-bottom: 2px solid $color-green !important;
+
+}
+.input-error {
+    border-bottom: 2px solid $color-error !important;
+
+}
+/*
+.field-container.checklist>.check-item.ok {
+    animation: out .6s 3s forwards
+}
+*/
+
+
+
+
+
+.withErrors{
+    animation: in .6s forwards
+}
+.allok{
+    animation: out .6s 3s forwards
+}
+
+
+
+.bg-container {
+    margin: 10px;
+    padding: 0;
+}
+.bg-container img {
+    width: 100%;
+}
+
+.login-error {
+    color: $color-error;
+    background-color: #e7a4a4;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    border: 2px solid $color-error;
+}
+
+.first h6 {
+    text-align: center;
+    color: #fff;
+}

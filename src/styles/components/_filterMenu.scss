@@ -1,0 +1,14 @@
+
+.filter-menu {
+    display: flex;
+    justify-content: center;
+    color: $color-shade;
+    font-size: $type-body2;
+}
+.filter-menu--item {
+    padding: 12px;
+    margin: 0 20px;
+    cursor: pointer;
+}
+
+.active-filter {font-weight: 700;}

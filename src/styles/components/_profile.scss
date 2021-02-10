@@ -1,0 +1,53 @@
+.user-block {
+    background-color: $color-shade;
+    border-radius: 26px 26px 0px 0px;
+    color: white;
+}
+.user-block--header {
+    position: relative;
+}
+
+.user-block--header--photo {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 124px;
+    height: 124px;
+    border: 8px solid $color-shade;
+    
+}
+
+.user-block--header .photo-container {
+    height: 140px;
+    position: absolute;
+    top: -62px;
+    
+}
+
+
+.profesional-profile {
+    background-color: white;
+    color: rgb(80,80,80);
+    border-radius: 24px;
+}
+.profesional-counter {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    width: 76px;
+}
+.profesional-counter img {
+    width: 48px;
+    padding: 12px;
+    background-color: rgb(194, 183, 214);
+    border-radius: 14px;
+}
+
+
+.general-setting-option {
+    color: white;
+    padding: 4px;
+    background-color: rgba(194, 183, 214, .3);
+    margin-bottom: 8px;
+}

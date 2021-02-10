@@ -1,0 +1,27 @@
+@import './components/_global.scss';
+
+.template-list a {
+    padding: 4px 8px;
+    display: flex;
+    justify-content: flex-end;
+}
+.template-list a:nth-of-type(even) {
+    justify-content: flex-start;
+}
+
+@media screen and (min-width: 769px) {
+    .template-list a {justify-content: center;}
+    .template-list a:nth-of-type(even) {
+        justify-content: center;
+    }
+}
+
+.template-box {
+    border-radius: 24px;
+    background-color: $color-main;
+    display: flex;
+    justify-content: center;
+    padding: 42px;
+    width: 160px;
+}
+
