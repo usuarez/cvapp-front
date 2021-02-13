@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { Redirect, useHistory } from 'react-router-dom';
-import { startGetUserData, startUpdate } from '../context/actions/auth'
+import { useHistory } from 'react-router-dom';
+import { startUpdate } from '../context/actions/auth'
 import {handleFocus, handleBlur} from '../helpers/focusBlur'
 import { fileUpload } from '../helpers/photoUpload';
 import cameraIcon from "../img/icons/camera.svg";
@@ -11,17 +11,10 @@ export default function FirstLogin() {
     const history = useHistory()
     const dispatch = useDispatch()
     const {auth} = useSelector(state => state)
-    const {name} = auth
+    const {name, phone: tel, dni, birth, address} = auth
     const [phone, setPhone] = useState('')
 
-useEffect(() => {
-    dispatch(startGetUserData(auth.uid))
-}, [])
-    
-
-
-
-    const setPhoneChange = e => {
+     const setPhoneChange = e => {
         const value = e.target.value
         const regexp = /^\(?([0-9]{3,4})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/;
         setPhone(value)
@@ -38,11 +31,11 @@ useEffect(() => {
         }
     }
     
-    const [userData, setUserData] = useState({name, phone: '', dni: '', birth: '', address: ''})
+    const [userData, setUserData] = useState({name, phone: tel, dni, birth, address})
     const handleInputChange = (e) => {
         setUserData({ ...userData, [e.target.name]: e.target.value })
     }
-    const {uid} = useSelector(state => state.auth)
+    const {_id: uid} = useSelector(state => state.auth)
 
     const handleSubmit = e => {
         e.preventDefault()
@@ -74,7 +67,7 @@ useEffect(() => {
 
     return (
         <>
-        {(auth?.dni && auth?.phone && auth?.address) ? <Redirect to="/walktrought" /> : 
+         
         <div className="container loginPage">
             <div className="col-10 offset-1 first">
                 <h5 className="mb-4 mt-5 regular">Hola {userData.name}, guardemos tu foto y otros datos de contacto</h5>
@@ -119,9 +112,8 @@ useEffect(() => {
                     </div>
                 </form>
             </section>
-        </div>}
-        
-
+        </div>
+    
         </>
     )
 }

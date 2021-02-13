@@ -5,6 +5,8 @@ import degreesIcon from '../img/icons/degrees.svg'
 import certificationIcon from '../img/icons/certification.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { startLogout } from '../context/actions/auth'
+import Avatar from '../helpers/initial-avatars'
+
 
 function ProfilePage() {
     const {name, email, profession, skills, experience, certifications, img} = useSelector(state => state.auth)
@@ -22,7 +24,8 @@ function ProfilePage() {
                     <header className="user-block--header text-center">
                         <div className="photo-container col-12 d-flex justify-content-center">
                             <div className="user-block--header--photo">
-                                <img src={img} alt="profile"/>
+                                {(!!img) ? <img src={img} alt="profile"/> : Avatar(name)}
+                                
                             </div>
 
                         </div>
@@ -31,7 +34,7 @@ function ProfilePage() {
                             <p className="thin">{email}</p>
                         </div>
                     </header>
-                    <div className="profesional-profile col-12 col-md-8 offset-md-2 col-lg-6 offset-lg-3 pt-3">
+                    <div className="profesional-profile col-12 col-sm-10 offset-sm-1 col-md-8 offset-md-2 col-lg-6 offset-lg-3 pt-3">
                         {(!!profession[0]) ? <h6 className="text-center pt-2 pb-3">Estudió {profession[0].title} en la {profession[0].entity}</h6> : null}
                         <div className="col-12 profesional-profile--counters d-flex justify-content-around pb-3">
                             <div className="profesional-counter">

@@ -24,7 +24,7 @@ function UserDataAddButton({name, title, place}) {
     }
     const [data, setData] = useState({})
     const dispatch = useDispatch()
-    const {uid} = useSelector(state => state.auth)
+    const {_id: uid} = useSelector(state => state.auth)
     const handleSubmit = e => {
         e.preventDefault()
         let {title, entity, from, to, level, about} = data

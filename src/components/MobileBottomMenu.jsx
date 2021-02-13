@@ -6,7 +6,7 @@ import moment from 'moment'
 
 function MobileBottomMenu() {
     const dispatch = useDispatch()
-    const {uid} = useSelector(state => state.auth)
+    const {_id: uid} = useSelector(state => state.auth)
     
     const checkToken = ()=>{
         if(!!uid) {
@@ -23,11 +23,11 @@ function MobileBottomMenu() {
         }
     }
 
-    window.onload = checkToken()
+    window.onload = setTimeout(checkToken(), 10000)
 
     const location = useLocation();
     const currentPath = location.pathname
-    console.log(currentPath.split('/')[1])
+    console.log(currentPath)
     return (
             (currentPath.split('/')[1] === 'login' || 
             currentPath.split('/')[1] === 'register' || 

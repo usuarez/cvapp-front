@@ -12,7 +12,7 @@ import MobileBottomMenu from '../components/MobileBottomMenu';
 
 function AppRouter() {
 
-    const {uid} = useSelector(state => state.auth)
+    const {_id: uid} = useSelector(state => state.auth)
     
     const isAuth = !!uid
     

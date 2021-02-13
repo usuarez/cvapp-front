@@ -5,11 +5,12 @@ export const startLogin = (email,password) => {
     return async dispatch => {
         const resp = await fetchSinToken('auth', {email, password}, 'POST')
         const body = await resp.json()
+        console.log(body.user)
         if(body.ok) {
             //save the token
             localStorage.setItem('token', body.token)
             localStorage.setItem('token-init-date', new Date().getTime())
-            dispatch( login({uid: body.uid, name: body.name, error: null}) )
+            dispatch( login({...body.user, error: null}) )
         } else {
             dispatch( login({error: body.message}) )
         }
@@ -32,7 +33,7 @@ export const startRegister = (email, password, name) => {
             localStorage.setItem('token', body.token)
             localStorage.setItem('token-init-date', new Date().getTime())
             //dispatch the login
-            dispatch( login({uid: body.user._id, name: body.user.name}) )
+            dispatch(startLogin(email,password))
         }
     }
 }
@@ -41,11 +42,11 @@ export const startGetUserData = (uid) => {
     return async (dispatch) => {
         const resp = await fetchConToken('user/my-data', {uid}, 'POST')
         const body = await resp.json()
+        console.log(body)
         if (body.ok) {
+            body.user.uid = body.user._id
             delete body.user._id
             dispatch(getUserData(body.user))
-        } else {
-            dispatch(startLogout())
         }
     }
 }

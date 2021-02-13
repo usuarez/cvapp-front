@@ -7,7 +7,7 @@ import { startGetUserData } from '../context/actions/auth'
 import { generateTemplate, setActiveTemplate } from '../context/actions/templates'
 
 export default function UserData() {
-    const { uid } = useSelector(state => state.auth)
+    const { _id: uid } = useSelector(state => state.auth)
     const dispatch = useDispatch()
     window.onload = ()=>{dispatch(startGetUserData(uid))}
     const {about, profession, experience, skills, certifications} = useSelector(state => state.auth)

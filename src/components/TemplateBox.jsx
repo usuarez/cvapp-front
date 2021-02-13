@@ -6,7 +6,7 @@ import { generateTemplate, setActiveTemplate } from '../context/actions/template
 function TemplateBox({id, img, bgcolor}) {
     const history = useHistory()
     const dispatch = useDispatch()
-    const {uid} = useSelector(state => state.auth)
+    const {_id: uid} = useSelector(state => state.auth)
     const {pdfData: actualTemplate} = useSelector(state => state.templates)
 
     const handleClick = (e)=>{
@@ -20,7 +20,7 @@ function TemplateBox({id, img, bgcolor}) {
             templateName: id,
             accentColor: "#363636",
             fonts: [
-            {link: "url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap')",
+            {link: "url('https://fonts.googleapis.com/css2?family=Roboto:wght@200;400;700&display=swap')",
              family: "'Roboto', sans-serif"}
                 ]
         }
@@ -41,7 +41,7 @@ function TemplateBox({id, img, bgcolor}) {
 
 
     return (
-        <a onClick={handleClick} className="col-6 col-sm-4 col-md-3 col-xl-2 mt-2" href={`/preview/${id}`}>
+        <a onClick={handleClick} className="col-6 col-md-4 col-lg-4 col-xl-3 mt-2" href={`/preview/${id}`}>
             <div className={`template-box ${bgcolor}`}>
                 <img src={img} className="template-box--img" alt="a" />
             </div>

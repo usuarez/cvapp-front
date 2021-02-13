@@ -9,13 +9,10 @@ import { startDeleteData } from '../context/actions/auth';
 
 moment.locale('es')
 
-
-
-
 function EditorProfileSummary({data, datastring}) {
 
     const dispatch = useDispatch()
-    const {uid} = useSelector(state => state.auth)
+    const {_id :uid} = useSelector(state => state.auth)
     const handleDelete = (e) => {
         let buttonsContainer = e.target.nextElementSibling
         buttonsContainer.style.display = 'flex'

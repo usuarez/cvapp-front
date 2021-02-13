@@ -27,7 +27,7 @@ export const generateTemplate = (data) => {
         const body = await resp.json()
         console.log(body)
         if(body.ok) {
-            dispatch(resumeUrl(`${backendHost}/resumes/${data.uid}.pdf`))
+            dispatch(resumeUrl(`${backendHost}/resumes/${data.uid}-${data.pdfData.templateName}.pdf`))
         }
         else {
             dispatch(startLogout())

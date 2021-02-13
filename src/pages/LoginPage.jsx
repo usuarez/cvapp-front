@@ -1,17 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import {handleFocus, handleBlur} from '../helpers/focusBlur'
 import {handleSwitch} from '../helpers/switchForms'
 import {passwordValidation} from '../helpers/passwordValidation'
 import CheckItem from '../components/CheckItem'
 import validator from 'email-validator'
 import { useDispatch, useSelector } from 'react-redux';
-import { startGetUserData, startLogin, startLogout, startRegister } from '../context/actions/auth'
+import { startLogin, startRegister } from '../context/actions/auth'
 import LoginBg from '../img/illustration/login.svg'
 import SignupBg from '../img/illustration/register.svg'
-import { Redirect, useHistory } from 'react-router-dom'
+import { Redirect } from 'react-router-dom'
 
 function LoginPage() {
-    const history = useHistory()
     //states
     //user and email to register
     const [signUp, setSignUp] = useState({
@@ -61,7 +60,6 @@ function LoginPage() {
             dispatch(startRegister(email, password, name))
         }
     }
-    let {auth} = useSelector(state => state)
     
     //the login handler
     const handleLogin = (e) => {
@@ -70,7 +68,7 @@ function LoginPage() {
         const password = document.getElementById('loginpassword').value
         if(email !== '' && password !== '') {
             dispatch(startLogin(email,password))
-            history.push('/')
+                
         } else {
             console.log('empty')
         }
@@ -78,16 +76,15 @@ function LoginPage() {
     
     /**end event handlers */
     const {password} = signUp
-    
-    
-    window.onload = ()=>{ !!auth.hasOwnProperty('uid') && dispatch(startLogout())}
+
+        
+    const {_id: uid} = useSelector(state => state.auth)
 
     //loginError appears when user try to login with bad credentials, in other cases is null
     const {error: LoginError} = useSelector(state => state.auth)
-
     return (
         <div className="fluid-container loginPage">
-            
+            {!!uid && <Redirect to="/" /> }
             <div className="bubbles">
                 <div className="bubble c-y"></div>
                 <div className="bubble c-o"></div>

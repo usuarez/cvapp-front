@@ -5,10 +5,9 @@ import PreviewHeader from '../components/PreviewHeader'
 import PDFViewer from 'pdf-viewer-reactjs'
 import 'bulma-helpers/css/bulma-helpers.min.css'
 function PreviewPage() {
-    const backendHost = process.env.REACT_APP_BACK_URL
-    const {uid}  = useSelector(state => state.auth)
+    const {_id: uid}  = useSelector(state => state.auth)
     const {experience, profession, skills}  = useSelector(state => state.auth)
-    let pdfUri = `${backendHost}/resumes/${uid}.pdf`
+    const {url} = useSelector(state => state.templates)
 
     return (
         <>
@@ -20,7 +19,7 @@ function PreviewPage() {
                     <div className="order-lg-2 col-lg-7">
                         <div className="col-12">
                             <PDFViewer
-                                document={ {url: pdfUri,} }
+                                document={ {url: url} }
                                 scale={1}
                                 hideZoom={true}
                                 canvasCss='pdfPage'

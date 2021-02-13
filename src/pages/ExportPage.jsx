@@ -9,7 +9,7 @@ function ExportPage() {
     const handleClick = (e)=>{
         const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:3009/api'
         e.preventDefault()
-        window.open(`${baseUrl}/user/download/${auth.uid}`)
+        window.open(`${baseUrl}/user/download/${auth._id}`)
         
         
     }

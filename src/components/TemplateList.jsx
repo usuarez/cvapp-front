@@ -15,11 +15,19 @@ function TemplateList() {
     const handleTemplatesData = (templateList) => {
         const backendHost = process.env.REACT_APP_BACK_URL
         const bgColors = ['bg-shade','bg-complementary','bg-orange','bg-green']
+        const getRandom = ()=>{
+            let random = Math.floor(Math.random()*(100-1))
+            if(random <= 25) return 0
+            if(random > 25 && random <= 50) return 1
+            if(random > 50 && random <= 75) return 2
+            if(random > 75 && random <= 100) return 3
+            
+        }
         for( let template of templateList) {
             templatesArr.push({
                 img: `${backendHost}/resumes/thumbs/${template}.png`,
                 id: template,
-                bgcolor: `${bgColors[Math.floor(Math.random()*(4-0))]}`
+                bgcolor: `${bgColors[getRandom()]}`
             })
         }
     }

@@ -7,15 +7,7 @@ export default function BrowsePage() {
             <Header />
             <div className="container pb-5 mb-5">
             <div className="container mt-3 pl-4">
-                <span className="type-body2 bold">Categoria</span>
-                <div className="">
-                </div>
-            </div>
-                    <TemplateList />
-
-                    
-            <div className="container mt-3 pl-4">
-                <span className="type-body2 bold">Categoria</span>
+                <span className="type-body2 bold">Todas las Plantillas</span>
                 <div className="">
                 </div>
             </div>

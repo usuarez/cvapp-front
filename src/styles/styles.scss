@@ -116,3 +116,18 @@
 }
 
 .min-h-100v {min-height: 100vh;}
+
+.initialAvatar {
+    margin: 0 auto;
+    width: 108px;
+    height: 108px;
+    background-color: $color-orange;
+}
+.avatarText {
+    text-align: center;
+    color: rgb(255, 255, 255);
+    margin:0px; 
+    padding:0px;
+    line-height: 108px;
+    font-size: 80px;
+  }
