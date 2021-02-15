@@ -21,6 +21,12 @@ export const templateReducer = (state = initialState, action) => {
                 ...state,
                 pdfData: action.payload
             }
+
+        case types.saveBase64Pdf:
+            return {
+                ...state,
+                base64: action.payload
+            }
             default:
             return state
     }

@@ -46,3 +46,19 @@ export const setActiveTemplate = (pdfData) => ({
     type: types.setActiveTemplate,
     payload: pdfData
 })
+
+
+export const getPdfPreview = (uid, activeTemplateName) => {
+    return async dispatch => {
+        const resp = await fetchSinToken(`user/preview/${uid}/${activeTemplateName}`, {}, 'GET')
+        const body = await resp.json()
+        if(body.ok){
+            dispatch(savepdfPreview(body.pdf))
+        }
+    } 
+}
+
+const savepdfPreview = (strbase64) => ({
+    type: types.saveBase64Pdf,
+    payload: strbase64
+ })

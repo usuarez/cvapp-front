@@ -1,0 +1,34 @@
+.homeHeader {
+    position: relative;
+    width: 100%;
+    min-height: 90vh;
+    color: #fff;
+}
+.homeCopy {
+    background-color: rgba($color-main, $alpha: 0.7);
+    padding: 4px;
+    border-radius: 40px;
+}
+.homeCopy h2 {
+line-height: 4rem;
+ @media (min-width: 320px) and (max-width: 576px) {
+     font-size: $type-headline3;
+ }
+}
+.homeHeader p strong {
+    color: $color-complementary;
+    font-weight: 700;
+}
+
+
+.text-dark{
+    color: rgb(80,80,80);
+}
+
+.ml-15 {margin-left: 15px;}
+
+.homeFooter{
+    color: #fff;
+    background-color: rgb(56, 56, 56);
+    padding: 24px;
+}

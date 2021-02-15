@@ -5,11 +5,11 @@ import illustration from '../img/illustration/export.svg'
 function ExportPage() {
 
     const auth = useSelector(state => state.auth)
-    console.log(auth)
+    const {templateName} = useSelector(state => state.templates.pdfData)
     const handleClick = (e)=>{
-        const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:3009/api'
         e.preventDefault()
-        window.open(`${baseUrl}/user/download/${auth._id}`)
+        const baseUrl = process.env.REACT_APP_API_URL || 'http://localhost:3009/api'
+        window.open(`${baseUrl}/user/download/${auth._id}/${templateName}`)
         
         
     }

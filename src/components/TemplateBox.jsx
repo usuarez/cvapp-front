@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useHistory } from 'react-router-dom'
-import { generateTemplate, setActiveTemplate } from '../context/actions/templates'
+import { generateTemplate, getPdfPreview, setActiveTemplate } from '../context/actions/templates'
 
 function TemplateBox({id, img, bgcolor}) {
     const history = useHistory()
@@ -31,6 +31,7 @@ function TemplateBox({id, img, bgcolor}) {
         }
 
         if(!actualTemplate || actualTemplate.templateName !== id) {
+            dispatch(getPdfPreview(uid, pdfData.templateName))
             dispatch(setActiveTemplate(pdfData))
             dispatch(generateTemplate(data))
         }

@@ -13,7 +13,9 @@ $color-error: #d83131;
   background-color: $color-error;
   color: #fff;
 }
-
+.bg-white{
+  background-color: #fff;
+}
 .bg-main{
   background-color: $color-main;
 }
@@ -83,3 +85,5 @@ $type-caption: 12px;
     border-radius: 8px;
     box-shadow: 1px 2px 8px rgba(49, 49, 49, .2);
   }
+
+  .type-fff { color: #fff !important;}

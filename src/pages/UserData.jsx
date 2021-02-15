@@ -3,13 +3,11 @@ import { useDispatch, useSelector } from 'react-redux'
 import EditorProfileSummary from '../components/EditorProfileSummary'
 import PreviewHeader from '../components/PreviewHeader'
 import UserDataAddButton from '../components/UserDataAddButton'
-import { startGetUserData } from '../context/actions/auth'
 import { generateTemplate, setActiveTemplate } from '../context/actions/templates'
 
 export default function UserData() {
     const { _id: uid } = useSelector(state => state.auth)
     const dispatch = useDispatch()
-    window.onload = ()=>{dispatch(startGetUserData(uid))}
     const {about, profession, experience, skills, certifications} = useSelector(state => state.auth)
     const {pdfData} = useSelector(state => state.templates)
     const handleClick = (e) => {

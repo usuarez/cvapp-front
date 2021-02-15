@@ -11,8 +11,8 @@ export const types = {
     authDeleteUserData: '[auth] Delete data',
     getTemplates: '[templates] get templates',
     registerResumeUrl: '[templates] register resume url',
-    setActiveTemplate: '[templates] set active template'
-    
+    setActiveTemplate: '[templates] set active template',
+    saveBase64Pdf: '[templates] save base 64 pdf to preview'
 }
 
 

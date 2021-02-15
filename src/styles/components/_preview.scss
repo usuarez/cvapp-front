@@ -83,3 +83,11 @@
 
 
 .max-h-36{max-height: 36px;}
+
+
+.controlpdf .pdfPage canvas {
+    border: 1px solid rgba(80,80,80,.4);
+    border-radius: 16px;
+    padding: 0px 16px;
+    background-color: #fff;
+}
