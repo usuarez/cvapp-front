@@ -9,6 +9,7 @@ export const startGetTemplates = () => {
     return async dispatch => {
         const resp = await fetchSinToken('user/templates', {}, 'GET')
         const body = await resp.json()
+        console.log(body)
         if(body.templates) {
             const {templates} = body
             dispatch(getTemplates(templates))   
