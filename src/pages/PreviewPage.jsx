@@ -1,6 +1,6 @@
 import React  from 'react'
 import { useSelector } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import PreviewHeader from '../components/PreviewHeader'
 import PDFViewer from 'pdf-viewer-reactjs'
 import 'bulma-helpers/css/bulma-helpers.min.css'
@@ -43,10 +43,10 @@ function PreviewPage() {
                         </div>
                             */}
 
-
-                        <a href="/user-data" className="col-10 mt-4 text-center btn btn-next">Editar mi perfil</a>
+                            
+                        <Link to="/user-data" className="col-10 mt-4 text-center btn btn-next">Editar mi perfil</Link>
                         <span className="max-h-36 mt-4 col-12 type-body2 text-center">¿Todo listo?</span>
-                        <a href="/export" className="col-10 mt-4 mt-lg-2 text-center btn btn-next">Descargar</a>
+                        <Link to="/export" className="col-10 mt-4 mt-lg-2 text-center btn btn-next">Descargar</Link>
                         
                     </div>
                 </div>

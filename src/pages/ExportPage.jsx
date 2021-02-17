@@ -1,5 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import illustration from '../img/illustration/export.svg'
 
 function ExportPage() {
@@ -26,7 +27,8 @@ function ExportPage() {
                      <button onClick={handleClick} className="text-center btn btn-next col-10 col-lg-12" >Descargar Pdf</button>} 
                     
                     <p className="col-10 text-center pt-3 pb-3">¿Te faltó añadir algo?</p>
-                    <a href="/user-data" className="text-center btn btn-bordered col-10 col-lg-12">Edita datos</a>
+                    <Link to="/user-data" className="text-center btn btn-bordered col-10 col-lg-12">Edita datos</Link>
+                    
                 </div>
             </div>
 

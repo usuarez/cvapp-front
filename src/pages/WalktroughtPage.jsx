@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { useSelector } from 'react-redux'
-import { Redirect } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import walkA from '../img/illustration/walk1.svg'
 import walkB from '../img/illustration/walk2.svg'
 import walkC from '../img/illustration/walk3.svg'
@@ -71,8 +71,8 @@ export default function WalktroughtPage() {
             <div className="step-description">
                 <h6 className="mb-2 mt-4">{step.title}</h6>
                 <p className="mt-1">{step.description}</p>
-            </div>
-            {(!endBtn) ? <button onClick={handleClick} className="btn mt-4 col-12 col-md-6 col-lg-4">Siguiente</button> : <a href="/" className="btn mt-4">Finalizar</a>}
+            </div> 
+            {(!endBtn) ? <button onClick={handleClick} className="btn mt-4 col-12 col-md-6 col-lg-4">Siguiente</button> : <Link to="/" className="btn mt-4 col-12 col-md-6 col-lg-4">Finalizar</Link>}
         </div>
         </>
     )

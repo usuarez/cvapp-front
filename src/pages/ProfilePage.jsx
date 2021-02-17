@@ -6,6 +6,7 @@ import certificationIcon from '../img/icons/certification.svg'
 import { useDispatch, useSelector } from 'react-redux'
 import { startLogout } from '../context/actions/auth'
 import Avatar from '../helpers/initial-avatars'
+import { Link } from 'react-router-dom'
 
 
 function ProfilePage() {
@@ -65,10 +66,11 @@ function ProfilePage() {
                     </div>
                     <div className="general-settings d-flex flex-column mt-4 pb-5 col-12 col-lg-6 offset-lg-3">
                         <h6 className="text-center mb-3">Ajustes Generales</h6>
-                        <a href="/new-profile" className=" col-10 offset-1 general-setting-option">Actualizar datos de contacto</a>
-                        <a href="/" className=" col-10 offset-1 general-setting-option">Cambiar contraseña</a>
-                        <a href="/new-profile" className=" col-10 offset-1 general-setting-option">Cambiar Foto de perfil</a>
-                        <a href="/login" onClick={handleLogout} className=" col-10 offset-1 general-setting-option">Cerrar sesion</a>
+                        
+                        <Link href="/new-profile" className=" col-10 offset-1 general-setting-option">Actualizar datos de contacto</Link>
+                        <Link href="/" className=" col-10 offset-1 general-setting-option">Cambiar contraseña</Link>
+                        <Link href="/new-profile" className=" col-10 offset-1 general-setting-option">Cambiar Foto de perfil</Link>
+                        <Link href="/login" onClick={handleLogout} className=" col-10 offset-1 general-setting-option">Cerrar sesion</Link>
                         
                     </div>
                 </section>

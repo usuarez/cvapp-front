@@ -1,5 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
+import { Link } from 'react-router-dom'
 import EditorProfileSummary from '../components/EditorProfileSummary'
 import PreviewHeader from '../components/PreviewHeader'
 import UserDataAddButton from '../components/UserDataAddButton'
@@ -24,7 +25,7 @@ export default function UserData() {
     return (
         <>
             <PreviewHeader />
-            <div className="container">
+            <div className="container py-5">
                 
                 <div className="row fluid-bg">
                     <h5 className="col-12 text-center mt-3 mb-3">Mi perfil</h5>
@@ -56,7 +57,7 @@ export default function UserData() {
                 </div>
                 <div className="row mt-4 pb-5">
                     
-                    <a href={`/preview/${pdfData.templateName}`} onClick={handleClick} className="btn btn-next col-8 offset-2 text-center">Previsualizar Cv</a>
+                    <Link to={`/preview/${pdfData.templateName}`} onClick={handleClick} className="btn btn-next col-8 offset-2 text-center">Previsualizar Cv</Link>
                 </div>
             </div>
 

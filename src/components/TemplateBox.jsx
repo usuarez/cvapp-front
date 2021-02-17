@@ -1,6 +1,6 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import { generateTemplate, getPdfPreview, setActiveTemplate } from '../context/actions/templates'
 
 function TemplateBox({id, img, bgcolor}) {
@@ -42,11 +42,11 @@ function TemplateBox({id, img, bgcolor}) {
 
 
     return (
-        <a onClick={handleClick} className="col-6 col-md-4 col-lg-4 col-xl-3 mt-2" href={`/preview/${id}`}>
+        <Link onClick={handleClick} className="col-6 col-md-4 col-lg-4 col-xl-3 mt-2" to={`/preview/${id}`} >
             <div className={`template-box ${bgcolor}`}>
                 <img src={img} className="template-box--img" alt="a" />
             </div>
-        </a>
+        </Link>
     )
 }
 

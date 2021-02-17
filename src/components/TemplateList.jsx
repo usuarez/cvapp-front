@@ -1,4 +1,4 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import TemplateBox from './TemplateBox'
 import {v4 as uuid} from 'uuid'
 import { useDispatch, useSelector } from 'react-redux'
@@ -34,7 +34,9 @@ function TemplateList() {
 
     const {templateList} = useSelector(state => state.templates)
     
-    window.onload =()=>{ dispatch(startGetTemplates()) }
+    useEffect(() => {
+        dispatch(startGetTemplates())
+    }, [])
 
     if(!!templateList && templateList.length !== 0) {
         handleTemplatesData(templateList)

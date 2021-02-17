@@ -53,7 +53,7 @@ function AppRouter() {
           
                     <Redirect to="/" />
 
-                
+                    <Route path="*" component={HomePage} />
                 </Switch>
                 <MobileBottomMenu />
             </Router>

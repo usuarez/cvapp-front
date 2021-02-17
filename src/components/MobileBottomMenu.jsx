@@ -33,8 +33,7 @@ function MobileBottomMenu() {
             currentPath.split('/')[1] === 'register' || 
             currentPath.split('/')[1] === 'recover' || 
             currentPath.split('/')[1] === 'new-profile' ||
-            currentPath.split('/')[1] === 'user-data' ||
-            currentPath.split('/')[1].includes('preview') || 
+            
             currentPath.split('/')[1] === 'walktrought') ? <div></div> :
             <div className="mobile-bottom-menu fluid-container">
                 <div className="row">

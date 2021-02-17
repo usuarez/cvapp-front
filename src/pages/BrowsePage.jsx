@@ -11,7 +11,7 @@ export default function BrowsePage() {
                 <div className="">
                 </div>
             </div>
-                    <TemplateList />
+                <TemplateList />
             </div>
 
             

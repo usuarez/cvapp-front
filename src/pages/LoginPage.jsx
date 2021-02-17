@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import {handleFocus, handleBlur} from '../helpers/focusBlur'
 import {handleSwitch} from '../helpers/switchForms'
 import {passwordValidation} from '../helpers/passwordValidation'
@@ -76,9 +76,23 @@ function LoginPage() {
     
     /**end event handlers */
     const {password} = signUp
-
-        
     const {_id: uid} = useSelector(state => state.auth)
+
+ 
+        useEffect(() => {
+            let inputs = Array.from(document.querySelectorAll('.field-container.inputhandled'))
+            inputs.forEach(container => {
+                if(container.children[1].value.length > 0){
+                    container.children[0].style.animation = 'out .6s forwards'
+                }
+                container.children[1].addEventListener('change', ()=>{
+                    if(container.children[1].value.length > 0){
+                        container.children[0].style.animation = 'out .6s forwards'
+                    }
+
+                })
+            })
+        }, [])
 
     //loginError appears when user try to login with bad credentials, in other cases is null
     const {error: LoginError} = useSelector(state => state.auth)
@@ -96,11 +110,11 @@ function LoginPage() {
                     <div className="bg-container col-12 d-flex justify-content-center">
                         <img className="col-10 col-sm-8 col-md-6 col-lg-4 col-xl-3" src={LoginBg} alt=""/>
                     </div>
-                    <div onClick={handleFocus} onBlur={handleBlur} className="field-container mb-4">
+                    <div onClick={handleFocus} onBlur={handleBlur} className="field-container inputhandled mb-4">
                         <label htmlFor="email">Email</label>
                         <input type="text" name="email" id="loginemail" />
                     </div>
-                    <div onClick={handleFocus} onBlur={handleBlur} className="field-container mb-3">
+                    <div onClick={handleFocus} onBlur={handleBlur} className="field-container inputhandled mb-3">
                     <label htmlFor="password">Contraseña</label>
                     <input type="password" name="password" id="loginpassword" />
                     </div>
@@ -127,15 +141,15 @@ function LoginPage() {
                 <div className="bg-container col-12">
                         <img className="col-10 offset-1 col-sm-8 offset-sm-2 col-md-6 offset-md-3 col-lg-4 offset-lg-4" src={SignupBg} alt=""/>
                     </div>
-                <div onClick={handleFocus} onBlur={handleBlur} className="field-container mb-3">
+                <div onClick={handleFocus} onBlur={handleBlur} className="field-container inputhandled mb-3">
                         <label htmlFor="name">Nombre</label>
                         <input onChange={handleRegisterInputs}  type="text" name="name" />
                     </div>
-                    <div onClick={handleFocus} onBlur={handleBlur} className="field-container mb-3">
+                    <div onClick={handleFocus} onBlur={handleBlur} className="field-container inputhandled mb-3">
                         <label htmlFor="email">Email</label>
                         <input onChange={handleRegisterInputs}  type="text" name="email" />
                     </div>
-                    <div onClick={handleFocus} onBlur={handleBlur} className="field-container mb-1">
+                    <div onClick={handleFocus} onBlur={handleBlur} className="field-container inputhandled mb-1">
                     <label htmlFor="password">Contraseña</label>
 
                     <input 
