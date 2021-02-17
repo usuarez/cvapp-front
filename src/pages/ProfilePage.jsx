@@ -67,10 +67,10 @@ function ProfilePage() {
                     <div className="general-settings d-flex flex-column mt-4 pb-5 col-12 col-lg-6 offset-lg-3">
                         <h6 className="text-center mb-3">Ajustes Generales</h6>
                         
-                        <Link href="/new-profile" className=" col-10 offset-1 general-setting-option">Actualizar datos de contacto</Link>
-                        <Link href="/" className=" col-10 offset-1 general-setting-option">Cambiar contraseña</Link>
-                        <Link href="/new-profile" className=" col-10 offset-1 general-setting-option">Cambiar Foto de perfil</Link>
-                        <Link href="/login" onClick={handleLogout} className=" col-10 offset-1 general-setting-option">Cerrar sesion</Link>
+                        <Link to="/new-profile" className=" col-10 offset-1 general-setting-option">Actualizar datos de contacto</Link>
+                        <Link to="/" className=" col-10 offset-1 general-setting-option">Cambiar contraseña</Link>
+                        <Link to="/new-profile" className=" col-10 offset-1 general-setting-option">Cambiar Foto de perfil</Link>
+                        <span onClick={handleLogout} className=" col-10 offset-1 general-setting-option">Cerrar sesion</span>
                         
                     </div>
                 </section>

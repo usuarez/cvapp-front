@@ -63,3 +63,7 @@ const savepdfPreview = (strbase64) => ({
     type: types.saveBase64Pdf,
     payload: strbase64
  })
+
+ export const tempLogout = ()=>({
+     type: types.templLogout
+ })

@@ -1,5 +1,6 @@
 import { types } from "../types/types";
 import { fetchSinToken, fetchConToken } from "../../helpers/fetch"
+import { tempLogout } from "./templates";
 
 export const startLogin = (email,password) => {
     return async dispatch => {
@@ -80,6 +81,7 @@ export const startLogout = () => {
     return async dispatch => {
         localStorage.removeItem('token-init-date')
         localStorage.removeItem('token')
+        dispatch(tempLogout())
         dispatch(logout())
     }
 }

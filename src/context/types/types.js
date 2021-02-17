@@ -12,7 +12,8 @@ export const types = {
     getTemplates: '[templates] get templates',
     registerResumeUrl: '[templates] register resume url',
     setActiveTemplate: '[templates] set active template',
-    saveBase64Pdf: '[templates] save base 64 pdf to preview'
+    saveBase64Pdf: '[templates] save base 64 pdf to preview',
+    templLogout: '[templates] clear templates state on logout'
 }
 
 

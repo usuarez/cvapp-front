@@ -27,6 +27,11 @@ export const templateReducer = (state = initialState, action) => {
                 ...state,
                 base64: action.payload
             }
+
+        case types.templLogout:
+            return {
+                
+            }
             default:
             return state
     }
