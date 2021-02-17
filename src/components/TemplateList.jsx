@@ -10,7 +10,9 @@ function TemplateList() {
     
 
     const templatesArr = []
-
+    useEffect(() => {
+        dispatch(startGetTemplates())
+    }, [])
 
     const handleTemplatesData = (templateList) => {
         const backendHost = process.env.REACT_APP_BACK_URL
@@ -31,12 +33,10 @@ function TemplateList() {
             })
         }
     }
+    
 
     const {templateList} = useSelector(state => state.templates)
     
-    useEffect(() => {
-        dispatch(startGetTemplates())
-    }, [])
 
     if(!!templateList && templateList.length !== 0) {
         handleTemplatesData(templateList)
