@@ -51,11 +51,19 @@ export const setActiveTemplate = (pdfData) => ({
 
 export const getPdfPreview = (uid, activeTemplateName) => {
     return async dispatch => {
-        const resp = await fetchSinToken(`user/preview/${uid}/${activeTemplateName}`, {}, 'GET')
-        const body = await resp.json()
-        if(body.ok){
-            dispatch(savepdfPreview(body.pdf))
+        try {
+            const resp = await fetchSinToken(`user/preview/${uid}/${activeTemplateName}`, {}, 'GET')
+            console.log(resp)
+            const body = await resp.json()
+            console.log(body)
+            if(body.ok){
+                dispatch(savepdfPreview(body.pdf))
+            }
+            
+        } catch (error) {
+         console.log(error)   
         }
+            
     } 
 }
 
