@@ -113,7 +113,6 @@ const update = (update) => ({
 
 export const renewToken = (id)=>{
     return async (dispatch) => {
-        console.log('renewwww')
         const resp = await fetchConToken(`auth/renew-token`, {id}, 'POST')
         const body = await resp.json()
         if(body.ok === false) { dispatch(startLogout()) }
