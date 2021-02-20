@@ -60,7 +60,7 @@ export default function UserData() {
                     <Link to={`/preview/${pdfData.templateName}`} onClick={handleClick} className="btn btn-next col-8 offset-2 text-center">Previsualizar Cv</Link>
                 </div>
             </div>
-
+        
         </>
     )
 }

@@ -18,7 +18,7 @@ function AppRouter() {
     
         
     return (
-        
+            
             <Router>
                 <Switch>
                     <Route exact path="/" component={HomePage} />
@@ -55,6 +55,7 @@ function AppRouter() {
                 </Switch>
                 <MobileBottomMenu />
             </Router>
+            
 
         
     )}

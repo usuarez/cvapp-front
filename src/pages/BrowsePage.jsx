@@ -13,9 +13,7 @@ export default function BrowsePage() {
             </div>
                 <TemplateList />
             </div>
-
-            
-            
+        
         </>
     )
 }
