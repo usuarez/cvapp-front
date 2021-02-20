@@ -7,7 +7,7 @@ import 'bulma-helpers/css/bulma-helpers.min.css'
 function PreviewPage() {
     const {_id: uid}  = useSelector(state => state.auth)
     const {experience, profession, skills}  = useSelector(state => state.auth)
-    const {base64 : base64pdf} = useSelector(state => state.templates)
+    const {url} = useSelector(state => state.templates)
     
     return (
         <>
@@ -19,7 +19,7 @@ function PreviewPage() {
                     <div className="order-lg-2 col-lg-7">
                         <div className="col-12">
                             <PDFViewer
-                                document={ {base64: base64pdf} }
+                                document={ {url: url} }
                                 scale={1}
                                 maxScale={1}
                                 minScale={1}
