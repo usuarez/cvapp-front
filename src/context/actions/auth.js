@@ -6,7 +6,7 @@ export const startLogin = (email,password) => {
     return async dispatch => {
         const resp = await fetchSinToken('auth', {email, password}, 'POST')
         const body = await resp.json()
-        console.log(body.user)
+    
         if(body.ok) {
             //save the token
             localStorage.setItem('token', body.token)
@@ -28,7 +28,7 @@ export const startRegister = (email, password, name) => {
     return async ( dispatch ) => {
         const resp = await fetchSinToken('user', {email,password, name}, 'POST')
         const body = await resp.json()
-        console.log(body)
+    
         if(body.ok) {
             //save the token
             localStorage.setItem('token', body.token)
@@ -43,7 +43,7 @@ export const startGetUserData = (uid) => {
     return async (dispatch) => {
         const resp = await fetchConToken('user/my-data', {uid}, 'POST')
         const body = await resp.json()
-        console.log(body)
+    
         if (body.ok) {
             body.user.uid = body.user._id
             delete body.user._id
@@ -59,10 +59,10 @@ const getUserData = (data) => ({
 
 export const startDeleteData = (id, arr, arrItemId) => {
     return async(dispatch) => {
-        console.log(arr)
+    
         const resp = await fetchConToken('user/deleteOne', {id, arr, arrItemId}, 'DELETE')
         const body = await resp.json()
-        console.log(body)
+    
         if (body.ok) {
             dispatch(deleteData(arr, arrItemId))
         } else {
@@ -93,7 +93,7 @@ const logout = () => ({
 //update
                             //object with data
 export const startUpdate = (uid, data) => {
-    console.log(data)
+
     return async dispatch => {
         const resp = await fetchConToken(`user/${uid}`, data, 'PUT')
                                         //returns a entire updated user object

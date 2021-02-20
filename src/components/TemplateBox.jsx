@@ -31,7 +31,7 @@ function TemplateBox({id, img, bgcolor}) {
         }
 
         if(!actualTemplate || actualTemplate.templateName !== id) {
-            dispatch(getPdfPreview(uid, pdfData.templateName))
+            //dispatch(getPdfPreview(uid, pdfData.templateName))
             dispatch(setActiveTemplate(pdfData))
             dispatch(generateTemplate(data))
         }

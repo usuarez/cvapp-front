@@ -9,7 +9,7 @@ export const startGetTemplates = () => {
     return async dispatch => {
         const resp = await fetchSinToken('user/templates', {}, 'GET')
         const body = await resp.json()
-        console.log(body)
+        
         if(body.templates) {
             const {templates} = body
             dispatch(getTemplates(templates))   
@@ -26,7 +26,7 @@ export const generateTemplate = (data) => {
     return async (dispatch) => {
         const resp = await fetchConToken('user/genpdf', {data}, 'POST')
         const body = await resp.json()
-        console.log(body)
+        
         if(body.ok) {
             dispatch(resumeUrl(`${backendHost}/resumes/${data.uid}-${data.pdfData.templateName}.pdf`))
         }
@@ -55,7 +55,7 @@ export const getPdfPreview = (uid, activeTemplateName) => {
             const resp = await fetchSinToken(`user/preview/${uid}/${activeTemplateName}`, {}, 'GET')
             console.log(resp)
             const body = await resp.json()
-            console.log(body)
+            
             if(body.ok){
                 dispatch(savepdfPreview(body.pdf))
             }
